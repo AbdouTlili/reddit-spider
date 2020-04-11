@@ -1,2 +1,2 @@
 # reddit-spider
-bot that search for top posts in reddit and retweet them
+bot that search for top posts in reddit and tweet them
