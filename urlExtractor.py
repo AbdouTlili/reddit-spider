@@ -24,9 +24,14 @@ def urlExtractor(url, https=None):
     htmlPage = resp.read()
     soup = BeautifulSoup(htmlPage, 'html.parser')
     
-    linkTags  = soup.find_all('img')
+    linkTags  = soup.find_all('a')
+
+    #linkTags = list(filter(lambda e: 'i.reddit' in e ,linkTags))
+
+    # TODO : test this part ans assure that it returns the good link to the image 
     for link in linkTags :
-        print(link.get('src'))
+        if 'i.reddit' in link or 'preview' in link :
+            print(link.get('href'))
 
 
 
